@@ -2,10 +2,17 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CategorieView from '../views/CategorieView.vue'
 
+import ProduitView from '../views/ProduitView.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
     // Associe des chemins d'accès au composant vue à afficher
   routes: [
+    {
+      path: '/produits',
+      name: 'produits',
+      component: ProduitView
+    },
     {
       path: '/',
       name: 'home',

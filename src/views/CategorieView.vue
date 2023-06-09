@@ -45,16 +45,15 @@
 import { reactive, onMounted } from "vue";
 import { doAjaxRequest, APIError } from "../api";
 
-// Pour réinitialiser le formuaire
+// Remise à zero du formulaire
 const categorieVide = {
     libelle: "",
     description: ""
 };
 
 let data = reactive({
-    // Les données saisies dans le formulaire
     formulaireCategorie: { ...categorieVide },
-    // La liste des catégories affichée sous forme de table
+    // table de la liste des catégories affichée
     listeCategories: []
 });
 
@@ -65,9 +64,8 @@ function showError(error) {
 }
 
 function chargeCategories() {
-    // Appel à l'API pour avoir la liste des catégories
-    // Trié par code, descendant
-    // Verbe HTTP GET par défaut
+    // récupération de la liste des catégories via l'API
+    // Trie descendant par code catégorie
     doAjaxRequest("/api/categories?sort=code,desc")
         .then((json) => {
             data.listeCategories = json._embedded.categories;

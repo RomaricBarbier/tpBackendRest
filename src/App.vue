@@ -15,6 +15,7 @@ import HelloWorld from './components/HelloWorld.vue'
                 <!-- Voir la configuration des liens dans router/index.js -->
                 <RouterLink to="/">Home</RouterLink>
                 <RouterLink to="/about">About</RouterLink>
+                <RouterLink to="/produits">Produits</RouterLink>
                 <RouterLink to="/categories">Categories</RouterLink>
             </nav>
         </div>
